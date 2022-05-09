@@ -1,0 +1,22 @@
+
+1) Zmen v  subore  .platformio\packages\framework-arduinoespressif32\cores\esp32\Server.h
+
+#ifndef server_h
+#define server_h
+
+#include "Print.h"
+
+class Server: public Print
+{
+public:
+    // KH, change to fix compiler error for EthernetWebServer
+    // error: cannot declare field 'EthernetWebServer::_server' to be of abstract type 'EthernetServer'
+    // virtual void begin(uint16_t port=0) =0;
+    //virtual void begin() = 0;
+    void begin() {};
+};
+
+#endif
+
+ 2) v library.json vymaz QNET...
+ 3) a  potom zmas QNET.. z kniznic
